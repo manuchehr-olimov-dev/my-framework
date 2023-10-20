@@ -1,0 +1,13 @@
+{
+    "name": "user/test",
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "App/Controllers",
+            "App\\Model\\": "App/Models",
+            "Framework\\": "Framework/Controllers"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.7"
+    }
+}
