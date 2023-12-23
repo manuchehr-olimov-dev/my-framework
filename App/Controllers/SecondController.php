@@ -6,7 +6,7 @@ namespace App\Controllers;
 class SecondController{
     public function index()
     {
-        echo "bye";
+        return view('test-2');
     }
 }
 

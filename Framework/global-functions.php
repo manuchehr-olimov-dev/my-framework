@@ -1,11 +1,13 @@
 <?php
 
 function dd($var){
-    \src\Helper::dd($var);
+    return \Framework\Src\Helper::dd($var);
 }
 
-function view(string $route, array $data){
-    \Framework\View\View::render($route, $data);
+function view(string $view, array $data = [])
+{
+    $view = new \Framework\Src\View\View($view, $data);
+    return $view->render();
 }
 
 ?>
