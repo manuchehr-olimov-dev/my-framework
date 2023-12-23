@@ -1,9 +1,10 @@
 <?php
-namespace Framework;
+namespace Framework\View;
 
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+
 class View
 {
 

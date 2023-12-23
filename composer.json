@@ -4,7 +4,7 @@
         "psr-4": {
             "App\\Controllers\\": "App/Controllers",
             "App\\Model\\": "App/Models",
-            "Framework\\": "Framework/Controllers"
+            "Framework\\Src\\": "Framework/Src"
         }
     },
     "require": {
