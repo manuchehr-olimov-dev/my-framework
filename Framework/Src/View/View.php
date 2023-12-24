@@ -20,7 +20,7 @@ class View
 
     public function render()
     {
-            $loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"] . '/View');
+            $loader = new FilesystemLoader($_SERVER["DOCUMENT_ROOT"] . '/Resources/view');
             $twig = new Environment($loader);
             echo $twig->render($this->view, $this->data);
             return $this;

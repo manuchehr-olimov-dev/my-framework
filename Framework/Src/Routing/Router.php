@@ -2,36 +2,43 @@
 
 namespace Framework\Src\Routing;
 
-class Router 
+use App\Controllers\MainController;
+
+class Router
 {
-    public static function Get(string $route, array $action): void
+    public static function get(string $route, array $action): void
     {
         Request::isRequestMethodEqualTo("GET");
+        Request::isRequestUriEqualTo($route);
+        Controller::isExist($action[0]);
 
-        if($_SERVER["REQUEST_URI"] === $route)
-        {
-            require_once "./{$action[0]}.php";
-            $controllerName     =   $action[0];
-            $controller         =   new $controllerName;
-            $controllerMethod   =   $action[1];
-            $controller->$controllerMethod();
-            exit();
-        }
+        // $action[0] will return \App\Framework\{ControllerName}
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $action[0] . '.php';
+        $controllerName     =   $action[0];
+        $controller         =   new $controllerName;
+        $controllerMethod   =   $action[1];
+        $controller->$controllerMethod();
+        exit();
     }
 
-    public static function View(string $route, string $view): void
+    public static function view(string $route, string $view): void
     {
         Request::isRequestMethodEqualTo("GET");
-
         if($_SERVER["REQUEST_URI"] === $route) {
-            require_once "./View/{$view}.html.twig";
+            require_once "./Resources/{$view}.html.twig";
             exit();
         }
     }
 
-    public static function Page404()
+    public static function page404(string $customPage = "")
     {
+        if($customPage === ""){
+            require_once $_SERVER['DOCUMENT_ROOT'] . "/Framework/Src/Html/page404.html";
+        } else {
+            require_once $_SERVER['DOCUMENT_ROOT'] . "/Framework/Src/Html/page404.html";
 
+        }
+        exit();
     }
 
 
