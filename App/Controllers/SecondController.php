@@ -3,11 +3,10 @@
 namespace App\Controllers;
 
 
-class SecondController{
+class SecondController
+{
     public function index()
     {
-        return view('test-2');
+        echo 123;
     }
 }
-
-?>
