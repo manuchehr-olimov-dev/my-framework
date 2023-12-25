@@ -6,3 +6,4 @@ require_once __DIR__ . '/Framework/framework.php';
 
 
 \Framework\Src\App::run();
+

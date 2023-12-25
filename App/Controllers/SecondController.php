@@ -7,6 +7,7 @@ class SecondController
 {
     public function index()
     {
-        echo 123;
+        echo "Hello World";
     }
+
 }

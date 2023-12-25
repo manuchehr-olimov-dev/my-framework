@@ -6,8 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        header{
+            padding: 20px 0;
+            color: #fff;
+            background-color: #111111;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ err_line }}</h1>
+    <header class="container-fluid">
+        <h4 class="container">
+            Something went wrong!
+        </h4>
+    </header>
+    <main class="container mt-1">
+        <div>
+            <h4>{{ errorMessage }}</h4>
+            <h4>Строка: {{ errorLineNum }}</h4>
+            <h4>Файл:   {{ errorFile }}</h4>
+        </div>
+        <hr>
+        <div>
+            <code> {{ errorLine }} </code>
+        </div>
+    </main>
 </body>
 </html>
